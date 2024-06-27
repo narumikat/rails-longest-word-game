@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="mt-4 pt-4">Result:</h1>
+  <div class="text-center mt-4">
+    <h2>You type <span style="font-weight: bold;"><%= @input %></span></h2>
+    <div class="mt-4">
+      <% if @answer_grid && @english_word %>
+        <h4>CONGRATULATIONS! <span style="font-weight: bold;"><%= @input %></span> is a valid English word!</h4>
+      <% elsif @english_word && !@answer_grid%>
+        <h4>Sorry, but <span style="font-weight: bold;"><%= @input %></span> can't be build out of <span style="font-weight: bold;"><%= @letters %></span></h4>
+      <% else%>
+        <h4>Sorry, but <span style="font-weight: bold;"><%= @input %></span> does not seem to be a valid English word <%= @letters %></h4>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Back do the game", new_path, class: "btn btn-primary mt-4" %>
+</div>
